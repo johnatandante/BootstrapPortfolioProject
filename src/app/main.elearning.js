@@ -11,7 +11,7 @@ $(function() {
                         
         },
         failed: function (error) {
-            $("#badges").append('<div>Sorry: no badges</div>');
+            $("#badges").append('<div>Sorry: can\'t retrive any badges</div>');
         }
     });
 
@@ -19,13 +19,15 @@ $(function() {
         let $user = $("#user");
 
         $("<img />",  {
-            'class': 'avatar',
+            'class': 'img-thumbnail',
             src: user.avatar
         }).appendTo($user);
+        
+        let $titlepage = $("#titlepage"); 
         $("<h4 />",{
             text: "Codeschooling since: " 
                 + new Date(user.member_since).toDateString() 
-        }).appendTo($user);
+        }).appendTo($titlepage);
 
     }
 
